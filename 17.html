@@ -1,0 +1,12 @@
+<div>
+    <textarea cols="30" rows="10"></textarea>
+</div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $("textarea").keyup(function (event) {
+        console.log(event.which);
+        if (event.which == 81) { // 'q' 입력시
+            $(this).val('');
+        }
+    });
+</script>

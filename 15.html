@@ -1,0 +1,47 @@
+<style>
+    div {
+        position: relative;
+        top: 0;
+        left: 0;
+        border: 1px solid blue;
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<div>
+</div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    var isClick = false;
+    var clickX = 0; // 이미지를 클릭한 x 좌표
+    var clickY = 0; // 이미지를 클릭한 y 좌표
+    $('div').mousedown(function () {
+        isClick = true;
+        clickX = event.pageX;
+        clickY = event.pageY;
+    });
+    $('div').mouseup(function () {
+        isClick = false;
+    });
+    $('div').mousemove(function (event) {
+        if (isClick) {//마우스 press상태
+            //div의 left와 top값을 확인(0,0)
+            var left = $('div').css('left');
+            var top = $('div').css('top');
+            left = parseInt(left);
+            top = parseInt(top);
+            $('div').css({
+                'top': top - (clickY - event.pageY),
+                'left': left - (clickX - event.pageX)
+            });
+            clickX = event.pageX;
+            clickY = event.pageY;
+        } else {
+
+        }
+        $('div').html('X좌표 : ' + event.pageX + '<br>Y좌표 : ' + event.pageY);
+    });
+
+
+</script>

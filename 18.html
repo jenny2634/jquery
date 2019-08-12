@@ -1,0 +1,14 @@
+<input type='button' id='off' value='해제'>
+<h2>Copy</h2>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('h2').click(function () {
+        $('body').append('click');
+    });
+    $(document).on('click','h2', function () {
+        $('body').append($(this).clone());
+    });
+    $('#off').click(function () {
+        $('h2').off('click'); // click 이벤트 모두 해제
+    });
+</script>

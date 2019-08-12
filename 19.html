@@ -1,0 +1,22 @@
+<style>
+    div {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        display: inline-block;
+        margin: 9px;
+    }
+</style>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('div:first').click(function () {
+        $(this).hide('1000', function afterHide() {
+            $(this).next().hide('1000', afterHide);
+        });
+    });
+</script>

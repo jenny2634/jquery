@@ -1,0 +1,73 @@
+<style>
+    .content {
+        color: #008000;
+    }
+
+    ul#menubar {
+        width: 360px;
+    }
+
+    ul#menubar,
+    ul#menubar ul {
+        text-indent: 10px;
+        list-style: none;
+        padding: 0;
+    }
+
+    li.menu {
+        margin-bottom: 2px;
+    }
+
+    div.menuitem {
+        height: 32px;
+        line-height: 2;
+        background: #6b8e23;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    ul.submenuitem li {
+        height: 32px;
+        line-height: 2;
+        background-color: #f5f5dc;
+        cursor: pointer;
+    }
+
+    ul.submenuitem li a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    ul.submenuitem li:hover {
+        background: #f0e68c;
+    }
+</style>
+
+<div id="content" class='content'>
+    <ul id="menubar">
+        <li class="menu">
+            <div class="menuitem">OS</div>
+            <ul class="submenuitem">
+                <li><a href="#">Android</a></li>
+                <li><a href="#">iOS</a></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <div class="menuitem">Language</div>
+            <ul class="submenuitem">
+                <li><a href="#">Java</a></li>
+                <li><a href="#">C</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Go</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('.menuitem').next().hide();
+    $('.menuitem').click(function(){
+        $(this).next().slideToggle();
+    })
+</script>

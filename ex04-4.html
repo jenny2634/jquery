@@ -1,0 +1,31 @@
+<table border="1">
+                <tr><th>번호</th><th>제목</th><th>조회수</th><th>작성일자</th></tr>
+                <tr><td>3</td><td>제목3</td><td>0</td><td>11-07-13</td></tr>
+                <tr><td>2</td><td>제목2</td><td>0</td><td>11-07-12</td></tr>
+                <tr><td>1</td><td>제목1</td><td>0</td><td>11-07-11</td></tr>
+               </table>
+               선택된 행 :
+               <span id="s1"></span> / <span id="s2"></span> / <span id="s3"></span> / <span id="s4"></span>
+               <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+               <script>
+                // 코드 작성
+                $('tr').click(function(){
+                        $('tr').removeAttr('style');
+                        $(this).css('background','red');
+
+                        var td = $(this).children();
+                        for(var i = 0 ; i< td.length ; i++){
+                                var text = $(td[i]).text();
+                                $('#s' + (i+1)).text(text);
+                        }
+                        
+                        // var tr = $(this);
+                        // var td = tr.children();
+                      
+                        // $('#s1').text(td.eq(0).text());
+                        // $('#s2').text(td.eq(1).text());
+                        // $('#s3').text(td.eq(2).text());
+                        // $('#s4').text(td.eq(3).text());
+
+                })
+               </script>

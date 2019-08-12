@@ -1,0 +1,16 @@
+<style>
+        div {
+         position: absolute;
+         width: 40px; height: 40px;
+         border-radius: 20px;
+         background-color: red;
+        }
+        </style>
+        <div></div>
+        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+         $("body").click(function(e) {
+         $(this).append('<div/>');
+         $('div:last').css({"left" : e.pageX, "top" : e.pageY});
+         });
+        </script>

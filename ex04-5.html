@@ -1,0 +1,38 @@
+<p>검색어 입력 </p>: <input type="text" name="searchText">
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+     $( "p" ).draggable();
+    /* 코드 작성 */
+    // focus 이벤트 - '#' 입력
+    // keydown 이벤트 – space 입력시 ', #' 글자 입력
+    $('input[name=searchText]').focus(function () {
+        if($(this).val().length == 0){//아무것도 없을때만 #하나
+            $(this).val('#');
+        }
+    });
+    $('input[name=searchText]').keydown(function (e) {
+        var input = e.keyCode;
+        if (e.keyCode == '32') {//e.keycode e.which
+            var text = $(this).val();
+            // 0 1 2 3
+            // length 4
+            var end = text.substring(text.length - 1);
+            if(end !== '#'){
+                $(this).val($(this).val() + ', #');
+                e.preventDefault();
+                return false;//더이상 진행을 안시킨다 (space 없앰) //이벤트 동작후 키입력됨
+            }
+        }
+    });
+
+// $('[name=searchText]').focus().val("#");
+//  $('[name=searchText]').keydown(function(event){
+//     if(event.keyCode == '32'){
+//         var html = $(this).val();
+//         $(this).val(html + '#');
+//          return false;
+//     }
+//  })
+</script>

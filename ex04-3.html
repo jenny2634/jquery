@@ -1,0 +1,46 @@
+<table border="1">
+        <tr>
+                <th></th>
+                <th>번호</th>
+                <th>제목</th>
+                <th>조회수</th>
+                <th>작성일자</th>
+        </tr>
+        <tr>
+                <td><input type='checkbox'></td>
+                <td>3</td>
+                <td>제목3</td>
+                <td>0</td>
+                <td>11-07-13</td>
+        </tr>
+        <tr>
+                <td><input type='checkbox'></td>
+                <td>2</td>
+                <td>제목2</td>
+                <td>0</td>
+                <td>11-07-12</td>
+        </tr>
+        <tr>
+                <td><input type='checkbox'></td>
+                <td>1</td>
+                <td>제목1</td>
+                <td>0</td>
+                <td>11-07-11</td>
+        </tr>
+</table>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+        var isChecked = false;
+        $('tr:gt(0)').click(function () {
+
+                if (isChecked == true) {
+                        $(this).find('input:checkbox').prop('checked', false);
+                        isChecked = false;
+                } else {
+                        $(this).find('input:checkbox').prop('checked', true);
+                        isChecked = true;
+                }
+
+        });
+                // 코드 작성
+</script>

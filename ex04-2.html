@@ -1,0 +1,20 @@
+<table border="1">
+        <tr><th></th><th>번호</th><th>제목</th><th>조회수</th><th>작성일자</th></tr>
+        <tr><td><input type='checkbox'></td><td>3</td><td>제목3</td><td>0</td><td>11-07-13</td></tr>
+        <tr><td><input type='checkbox'></td><td>2</td><td>제목2</td><td>0</td><td>11-07-12</td></tr>
+        <tr><td><input type='checkbox'></td><td>1</td><td>제목1</td><td>0</td><td>11-07-11</td></tr>
+       </table>
+       <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+       <script>
+        // 코드 작성
+        $('tr').click(function(){
+            //내부 요소 중 checkbox를 찾은 후 check
+           // $(this).find('input:checkbox').prop('checked', true);
+            //클릭된 tr의 index를 확인 후 check
+            var idx = $('tr').index($(this));
+            $('input:checkbox').eq(idx - 1).prop('checked', true);
+        });
+        $('input[type=checkbox]').click(function(e){
+            e.stopPropagation();
+        })
+       </script>
