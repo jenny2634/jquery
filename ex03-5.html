@@ -1,0 +1,27 @@
+<h3>과목</h3>
+<label><input type='checkbox' value='java' name='subject'>JAVA</label>
+<label><input type='checkbox' value='html' name='subject'>HTML</label>
+<label><input type='checkbox' value='jsp' name='subject'>JSP</label>
+<hr>
+<h3>지역</h3>
+<label><input type='checkbox' value='seoul' name='area'>서울</label>
+<label><input type='checkbox' value='jeju' name='area'>제주</label><br>
+<input type='button' value='실행' onclick='run()'>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function run() {
+        // 코드 작성
+        var subjects = $('[name=subject]:checked');
+        for (var i = 0; i < subjects.length; i++) {
+            var subject = subjects[i];
+            var value = $(subject).val();
+            console.log(value);
+        }
+        var areas = $('[name=area]:checked');
+        for (var i = 0; i <  areas.length; i++) {
+            var area =  areas[i];
+            var value = $(area).val();
+            console.log(value);
+        }
+    }
+</script>

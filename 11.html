@@ -1,0 +1,17 @@
+<h1>Header-0</h1>
+<h1>Header-1</h1>
+<h1>Header-2</h1>
+<h1>Header-3</h1>
+<input type="text">
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('input').keydown(function (e) {
+        console.log(e);
+        var value = e.keyCode;
+        $('input').val(value + 32);
+    })
+ $('h1').click(function(event) {
+     console.log(event);
+ $(this).css('color', 'red');
+ });
+</script>

@@ -1,0 +1,34 @@
+<style>
+    input {
+        display: none;
+    }
+
+    input:checked+label {
+        background-color: red;
+    }
+
+    div {
+        display: none;
+        width: 100px;
+        height: 100px;
+        border: 1px solid blue;
+    }
+</style>
+<input type='radio' id='tab1' name='tab'><label for='tab1' onclick='run(this)'>Tab 1</label>
+<input type='radio' id='tab2' name='tab'><label for='tab2' onclick='run(this)'>Tab 2</label>
+<input type='radio' id='tab3' name='tab'><label for='tab3' onclick='run(this)'>Tab 3</label>
+<div>Tab1 내용</div>
+<div>Tab2 내용</div>
+<div>Tab3 내용</div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function run(obj) {
+        // 코드 작성
+       
+        var idx = $('label').index($(obj));
+         $('div').css('display','none');
+        //$('div').eq(idx).css('display','block');
+         $('div').eq(idx).show();
+        
+    }
+</script>

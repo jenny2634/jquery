@@ -1,0 +1,22 @@
+<div>
+    <input type="button" value="추가" onclick="addFile()">
+    <input type="button" value="삭제" onclick="removeFile()">
+    <input type="button" value="전체삭제" onclick="emptyFile()">
+</div>
+<div><input type="file"></div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function addFile() {
+        // 코드 작성
+        var item = '<input type="file">';
+        var html = $('div:last').html();
+        $('div:last').html(html + item);
+    }
+    function removeFile() {
+        // 코드 작성
+        $('input[type=file]:last').remove();
+    }
+    function emptyFile(){
+        $('div:last').empty();
+    }
+</script>

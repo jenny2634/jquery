@@ -1,0 +1,20 @@
+<table border="1">
+                <tr><th>구분</th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+                <tr><td>가</td><td>A</td><td>B</td><td>C</td><td>D</td></tr>
+                <tr><td>나</td><td>A</td><td>B</td><td>C</td><td>D</td></tr>
+                <tr><td>다</td><td>A</td><td>B</td><td>C</td><td>D</td></tr>
+                </table>
+                <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+                <script>
+                 // 코드 작성
+                 $('td:nth-child(2n+1)').css('background-color','orange');
+                 $('td:nth-child(2n)').css('background-color','lightblue');
+
+                var idx=0;
+                 setInterval(function(){//무한반복하는 기능가진 함수
+                        $('td:eq('+idx+')').css('font-size','20px');
+                        idx += 1;
+                 },1000);
+
+                 
+                </script>

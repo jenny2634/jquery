@@ -1,0 +1,22 @@
+<style>
+        div { border: 1px solid blue; display: inline-block; }
+        div > div { width: 50px; height: 50px; margin: 20px;}
+       </style>
+       <div style='width: 200px; height: 100px;'>
+        <div style='background-color: red;'></div>
+        <div style='background-color: blue; border-radius: 25px;'></div>
+       </div>
+       <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+       <script>
+        $('div > div:first').click(function(event) {
+        console.log('red div');
+        event.stopPropagation();
+        });
+        $('div > div:last').click(function(event) {
+        console.log('blue div');
+        event.stopPropagation();
+        });
+        $('div:parent').click(function() {
+        console.log('parent div');
+        });
+       </script>

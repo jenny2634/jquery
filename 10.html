@@ -1,0 +1,24 @@
+<ul>
+    <li onclick='run(this)'>Item-0</li>
+    <li onclick='run(this)'>Item-1</li>
+    <li onclick='run(this)'>Item-2</li>
+    <li onclick='run(this)'>Item-3</li>
+    <li onclick='run(this)'>Item-4</li>
+</ul>
+<ul>
+    <li onclick='run(this)'>Item-0</li>
+    <li onclick='run(this)'>Item-1</li>
+    <li onclick='run(this)'>Item-2</li>
+    <li onclick='run(this)'>Item-3</li>
+    <li onclick='run(this)'>Item-4</li>
+</ul>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function run(obj) {
+        $(obj).css('background-color', 'yellow');
+        var index = $('ul:last > li').index($(obj));
+        console.log(index);
+
+        $(obj).show();//$(obj).hide();
+    }
+</script>

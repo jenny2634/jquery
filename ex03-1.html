@@ -1,0 +1,40 @@
+<style>
+        td {
+            width: 30px;
+            height: 30px;
+        }
+    
+        .select {
+            background-color: gray;
+        }
+    </style>
+    <table border='1'>
+        <tr>
+            <td onclick='sel(this)'></td>
+            <td onclick='sel(this)'></td>
+            <td onclick='sel(this)'></td>
+        </tr>
+        <tr>
+            <td onclick='sel(this)'></td>
+            <td onclick='sel(this)'></td>
+            <td onclick='sel(this)'></td>
+        </tr>
+        <tr>
+            <td onclick='sel(this)'></td>
+            <td onclick='sel(this)'></td>
+            <td onclick='sel(this)'></td>
+        </tr>
+    </table>
+    <button type='button' onclick='reset()'>초기화</button>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        var reset = function() {
+            // 모든 css 속성삭제
+            // $('td').removeAttr('style');
+            $('td').removeClass('select');
+        }
+        var sel = function(td) {
+            $(td).addClass('select');
+            //toggleClass = 클릭하면 켜지고 클릭하면 꺼짐.
+        }
+    </script>

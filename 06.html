@@ -1,0 +1,17 @@
+<img src='https://s-i.huffpost.com/gen/4310640/thumbs/o-THE-570.jpg' onclick='change()' onmouseover="change2()">
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    
+    function change() {
+        var w = $('img').width();
+        console.log(w);
+        $('img').attr('width', w*0.5);
+    }
+
+    function change2(){
+        var w = $('img').width();
+        console.log(w);
+        $('img').attr('width', w*2);
+
+    }
+</script>

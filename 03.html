@@ -1,0 +1,65 @@
+<head>
+    <!-- 한글 깨짐 방지 -->
+    <meta charset="utf-8">
+</head>
+<fieldset>
+    <input type='checkbox' value='java'> JAVA
+    <input type='checkbox' value='html'> HTML
+    <input type='checkbox' value='js'> JavaScript
+    <input type='checkbox' value='jquery'> jQuery
+</fieldset>
+<input type='button' value='확인' onclick='check()'>
+<br>
+
+<select>
+    <option value='java'>JAVA</option>
+    <option value='html'>HTML</option>
+    <option value='js'>JavaScript</option>
+    <option value='jquery'>jQuery</option>
+</select>
+<button type="button" onclick="checking()">값 확인</button>
+
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function checking(){
+        alert($('option:selected').val());
+    }
+
+    // object => json
+    var array = [0, 1, 2, 3, 4, 5];
+    var obj = {};
+
+    array['abcde'] = 'aaa';
+    console.log('===============');
+    for (var i = 0; i < array.length; i++) {
+        // i => 0 1 2 3 4 5 6 
+        console.log(`i = ${array[i]}`);
+    }
+    console.log('===============');
+    for (var item of array) {
+        console.log(`i2 = ${item}`);
+    }
+    console.log('===============');
+    for (var idx in array) {
+        console.log(`i2 = ${array[idx]}`);
+    }
+
+    function check() {
+        var elements = $('input:checked');
+        console.log(elements);
+        // for-each
+        // for(var idx of elements) {  // a, b, c
+        //   var item = idx;
+        // }
+        // for(var idx in elements) {  // a, b, c (X)
+        //                             // index 0, 1, 2
+        //   var item = idx;
+        // }
+        for (var i = 0; i < elements.length; i++) {
+            var item = elements[i];
+            console.log(item);
+            console.log(item.value);
+            console.log($(item).val())
+        }
+    }
+</script>

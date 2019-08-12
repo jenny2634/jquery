@@ -1,0 +1,18 @@
+<h1>Body Child</h1>
+<h2>Body Child</h2>
+<div>
+ <h1>Div Child</h1>
+ <h2>Div Child</h2>
+</div>
+<ul>
+ <li><h1>Li Child</h1></li>
+ <li><h2>Li Child</h2></li>
+</ul>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+ $(document).ready(function() {
+ $('h1 + h2').css('background-color', 'purple');
+ $('li + li > h2').css('background-color', 'yellow');
+ $('div > h1').css('color', 'green');
+ });
+</script>

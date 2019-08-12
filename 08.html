@@ -1,0 +1,21 @@
+<h3 value='설명'>게시물 작성</h3>
+제목 : <input type='text' name='title'><br>
+내용 : <textarea name='content'></textarea><br>
+<select>
+    <option value='휴대폰 장터'>휴대폰 장터</option> 
+    <option value='노트북 장터'>노트북 장터</option> 
+</select>
+<input type='button' value='확인' onclick='run()'>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function run() {
+        var desc = $('h3').attr('value');
+        var title = $('input[name=title]').val();
+        var content = $('textarea[name=content]').val();
+        var select = $('option:selected').val();
+        console.log('설명 => ' + desc);
+        console.log('제목 => ' + title);
+        console.log('내용 => ' + content);
+        console.log('종류 => ' + select);
+    }
+</script>

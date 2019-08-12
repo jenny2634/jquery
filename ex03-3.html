@@ -1,0 +1,12 @@
+<input type='button' value='변경' onclick='run()'><br>
+<img src='https://s-i.huffpost.com/gen/4310640/thumbs/o-THE-570.jpg' width='300'>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+ function run() {
+ // 20 ~ 300 난수
+ var width = parseInt(Math.random() * 281) + 20;
+ console.log(width);
+ // 코드 작성
+ $('img').attr('width',width);
+ }
+</script>

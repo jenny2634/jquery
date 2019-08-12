@@ -1,0 +1,12 @@
+ID : <input type='text' name='user_id'><span id='result'></span>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $('input').blur(function () {
+        var userId = $(this).val();
+        if (userId == '') {
+            $('#result').text('필수값 입니다');
+            //alert('필수!!!');
+            $(this).focus();
+        }
+    });
+</script>

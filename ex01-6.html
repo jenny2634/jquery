@@ -1,0 +1,17 @@
+<table border="1">
+        <tr><th>구분</th><th>A</th><th>B</th><th>C</th></tr>
+        <tr><td>가</td><td>10</td><td>10</td><td>10</td></tr>
+        <tr><td>나</td><td>20</td><td>20</td><td>20</td></tr>
+        <tr><td>다</td><td>30</td><td>30</td><td>30</td></tr>
+        <tr><td>계</td><td>60</td><td>60</td><td>60</td></tr>
+        </table>
+        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+         // 코드 작성
+         $('tr:first').css('background','lightgray')
+         $('tr:eq(1) > td:gt(0)').css('background','yellow')
+         $('tr:eq(2) > td:lt(3)').css('background','green')
+         $('tr:eq(3) > td:not(td:eq(2))').css('background','cyan')
+         $('tr:last > td:not(td:first):not(td:last)').css('background','orange')
+         
+        </script>

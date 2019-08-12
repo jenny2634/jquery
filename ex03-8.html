@@ -1,0 +1,31 @@
+제목 : <input type="text" name="title"><br>
+내용 : <input type="text" name="content"><br>
+작성자 : <input type="text" name="owner"><br>
+<input type="button" value="추가" onclick="add()">
+<table border="1">
+    <tr>
+        <td>제목</td>
+        <td>내용</td>
+        <td>작성자</td>
+    </tr>
+</table>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function remove(tr){
+        $(tr).remove();
+    }
+    function add() {
+        // 코드 작성
+        var title = $('input[name=title]').val();
+        var content = $('input[name=content]').val();
+        var owner = $('input[name=owner]').val();
+
+        if (title !== '' && content && owner) {
+            var html = `<tr onclick='remove(this)'><td>${title}</td><td>${content}</td><td>${owner}</td></tr>`;
+            $('table').append(html);
+
+        }
+
+
+    }
+</script>

@@ -1,0 +1,23 @@
+<table border='1'>
+        <tr>
+        <th>번호</th><th>지역</th><th>연도</th>
+        </tr>
+        <tr>
+        <td>1</td><td>진해</td><td>2004</td>
+        </tr>
+        <tr>
+        <td>2</td><td>제주</td><td>2007</td>
+        </tr>
+        <tr>
+        <td>3</td><td>부산</td><td>2009</td>
+        </tr>
+        <tr>
+        <td>4</td><td>서울</td><td>2012</td>
+        </tr>
+       </table>
+       <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+       <script>
+        $('tr:gt(2)').css('background-color', 'lightblue');
+        $('tr:lt(3):not(tr:first)').css('background-color', 'orange');
+        //$('tr:eq(0)').css('background-color', 'red');
+       </script>

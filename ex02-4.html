@@ -1,0 +1,10 @@
+<div><label><input type='checkbox'>1번</label></div>
+<div><label><input type='checkbox'>2번</label></div>
+<div><label><input type='checkbox' checked>3번</label></div>
+<div><label><input type='checkbox'>4번</label></div>
+<div><label><input type='checkbox' checked>5번</label></div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+ // 코드 작성
+ $('div').find('input:checked').parent().css('background','pink');
+</script>

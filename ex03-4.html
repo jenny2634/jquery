@@ -1,0 +1,28 @@
+<input type='button' value='전체선택' onclick='agree()'><br>
+<fieldset>
+    <legend>약관동의</legend>
+    <label><input type='checkbox' value='1'>동의1</label><br>
+    <label><input type='checkbox' value='2'>동의2</label><br>
+    <label><input type='checkbox' value='3'>동의3</label><br>
+    <label><input type='checkbox' value='4'>동의4</label><br>
+</fieldset>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function agree() {
+        // 코드 작성
+        var items = $('[type=checkbox]');
+        var isChecked = true;//전체 선택 상태로 맞춤
+        for (var i = 0; i<items.length; i++) {
+            var item = items[i];
+            if ($(item).is(':checked') == false) {
+                isChecked = false;
+                break;
+            }
+        }
+        if (isChecked) {
+            $('[type=checkbox]').prop('checked', false);
+        } else {
+            $('[type=checkbox]').prop('checked', true);
+        }
+    }
+</script>

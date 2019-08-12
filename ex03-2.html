@@ -1,0 +1,132 @@
+<style>
+    td {
+        width: 30px;
+        height: 30px;
+    }
+
+    .select {
+        background-color: gray;
+    }
+</style>
+<table border='1'>
+    <tr>
+        <td onclick='sel(this)'></td>
+        <td onclick='sel(this)'></td>
+        <td onclick='sel(this)'></td>
+    </tr>
+    <tr>
+        <td onclick='sel(this)'></td>
+        <td onclick='sel(this)'></td>
+        <td onclick='sel(this)'></td>
+    </tr>
+    <tr>
+        <td onclick='sel(this)'></td>
+        <td onclick='sel(this)'></td>
+        <td onclick='sel(this)'></td>
+    </tr>
+</table>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function sel(obj) {
+        $(obj).toggleClass('select');
+        var hasSelect = $(obj).is('.select');
+        if (hasSelect) {
+            var nowIdx = $('td').index($(obj));
+            // 가로 확인
+            var start = nowIdx - (nowIdx % 3);
+            var end = start + 3;
+            var count = 0;
+            for (var i = start; i < end; i++) {
+                if ($('td').eq(i).is('.select')) {
+                    count++;
+                }
+            }
+            if (count >= 3) {
+                alert('가로빙고');
+                count = 0;
+
+            }
+
+            console.log(nowIdx);
+
+            // // 세로 확인 코드 작성
+            count = 0;
+            start = nowIdx % 3;
+            end = start + 6;
+            for (var i = start; i <= end; i += 3) {
+                if ($('td').eq(i).is('.select')) {
+                    count++;
+                }
+            }
+            if (count == 3) {//count >= 3
+                alert('세로빙고')
+            }
+
+            count = 0;
+            if (nowIdx == 0 || nowIdx == 8) { // \
+                for (var i = 0; i <= 8; i += 4) {
+                    if ($('td').eq(i).is('.select')) {
+                        count++;
+                    }
+                }
+            }
+            if (count == 3) {//count >= 3
+                alert(`대각선 ＼ 빙고`)
+            }
+
+            count = 0;
+            if (nowIdx == 2 || nowIdx == 6) { // /
+                for (var i = 2; i <= 6; i += 2) {
+                    if ($('td').eq(i).is('.select')) {
+                        count++;
+                    }
+                }
+            }
+            if (count == 3) {//count >= 3
+                alert('대각선 / 빙고')
+            }
+
+
+
+            // var start3 = (nowIdx % 4);
+            // var end = start3 + 8;
+            // var count = 0;
+            // for (var i = start3; i <= end; i += 4) {
+            //     if ($('td').eq(i).is('.select')) {
+            //         count++;
+            //     }
+            // }
+            // if (count >= 3) {
+            //     alert('대각선 빙고 좌');
+            //     count = 0;
+
+            // }
+
+            // var start4 = (nowIdx % 2) + 2;
+            // var end = start4 + 4;
+            // console.log("start", start4)
+            // var count = 0;
+            // for (var i = start4; i <= end; i += 2) {
+            //     if ($('td').eq(i).is('.select')) {
+            //         if ((nowIdx != 2) && (nowIdx != 4) && (nowIdx != 6)) {
+            //             break;
+            //         }
+
+            //         count++;
+            //         console.log(count)
+
+            //     }
+            // }
+            // if (count >= 3) {
+            //     start4 = 0;
+            //     end = 0;
+            //     count = 0;
+            //     alert('대각선 빙고 우');
+
+            // }
+
+
+
+        }
+    }
+</script>

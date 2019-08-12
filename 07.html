@@ -1,0 +1,21 @@
+<input type='checkbox' name='skill'> Java
+<input type='checkbox' name='skill'> Database<br>
+<input type='checkbox' name='skill'> HTML / CSS
+<input type='checkbox' name='skill' checked> JavaScript<br>
+<input type='button' value='확인' onclick='run()'>
+<input type='button' value='선택' onclick='run1()'>
+<input type='button' value='해제' onclick='run2()'>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function run() {
+        $('input:checkbox').each(function (index) {
+            console.log(index + ' => ' + $(this).prop('checked'));
+        });
+    }
+    function run1(){
+        $('input').prop('checked', true);
+    }
+    function run2(){
+        $('input').prop('checked', false);
+    }
+</script>
