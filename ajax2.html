@@ -1,0 +1,17 @@
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+//ajax, 필수속성 url/success
+$.ajax({
+    url: 'http://ggoreb.com/json2.jsp', //서버에서 ajax 접속을 허용해줘야 사용 가능
+    success: function(res){//통신된 결과
+
+    //res 배열
+    for(var i=0; i<res.length ; i++){
+        var obj = res[i];//객체{}
+        var name = obj.name;
+        console.log(name);
+    }
+       
+    }
+})
+</script>

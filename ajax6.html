@@ -1,0 +1,79 @@
+<input type="text" id="search">
+<button type="button" id="search_btn">검색</button><br>
+
+<!-- Button to Open the Modal -->
+<button type="button" style='display:none;' class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 900px; height : 800px">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="height : 95%">
+                <iframe width="95%" height="95%" src="">
+                </iframe>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" style="right: 100%">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id='list'></div>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<script>
+    $('#search_btn').click(function () {
+        //$('#list').empty();
+        var sss = $('#search').val();
+        $.ajax({
+            url: './search',
+            data: { 'query': sss },
+            success: function (res) {
+                var items = res.items;
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var title = item.title;
+                    var img = item.image;
+                    var link = item.link;
+
+                    $('#list').append(`<img src ="${img}">`);
+                    $('#list').append('<span link_code="' + link + '"class="title">' + title + '</span><br>');
+                }
+
+            }
+        })
+    });
+    //on - click 이벤트 ( 미래에 등장할 요소까지 포함해서)
+    $(document).on('click', '.title', function () {
+        var code = $(this).attr('link_code');
+        //console.log(code);
+        $('iframe').attr('src', `${code}`);
+        $('#myModal').modal('show');
+    })
+
+
+</script>
